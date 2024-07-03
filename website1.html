@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihre Praxis für Ergotherapie</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+          
+            font-family: 'Roboto', sans-serif;
+            line-height: 2.0;
+            margin: 0;
+            padding: 0;
+            
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 150vh;
+            overflow-x: hidden;
+            font-weight:bold
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-links li a:hover {
+            background: #555;
+        }
+
+        section {
+            padding: 2rem 0;
+            max-width: 2000px;
+            margin: 0 auto;
+            flex: 1;
+            display: none;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        section.active {
+            display: block;
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .team-member img {
+            max-width: 100 px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+#neurology, #pediatrics, #orthopedics, #bio-neurofeedback, #home, #about-us, #testimonials, #contact {
+        background-size: cover;
+        background-position: center;
+    }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .service {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      
+        #neurology {
+ 
+  color: rgb(0, 0, 0);
+ background-image: url('https://www.neurologie-osnabrueck.de/images/logo-neurologie.jpg');
+background-repeat: no-repeat;
+}
+ #pediatrics  {
+    color: rgb(0, 0, 0);     
+    background-image: url('https://ergo-pettendorf.de/wp-content/uploads/2018/07/haende-farben-1-768x512.jpg');
+background-repeat: no-repeat;
+}
+
+
+#orthopedics {
+ 
+ color: rgb(0, 0, 0);
+ background-image: url('https://orthopaede.saarland/kniegelenk/uploads/2016/02/slider1-1500x630.jpg');
+}
+
+#psychotheraphy {
+    background-image: url('https://free-mobi.org/files/7/15218_sky_and_sea.jpg');
+background-repeat: no-repeat;
+color: #000000;
+}
+#bio-neurofeedback {
+ 
+ color: rgb(255, 255, 255);
+ background-image: url('https://www.healthdigest.com/img/gallery/health-benefits-of-biofeedback-therapy/l-intro-1666103926.jpg');
+background-repeat: no-repeat;
+}
+
+#home {
+ max-width: 50000px;
+ color: rgb(255, 255, 255);
+ background-color:rgb(90, 52, 2) ;
+min-width: 2000px;
+}
+#about-us {
+ min-width: 2000px;
+ color: rgb(255, 255, 255);
+ background-color:rgb(90, 52, 2) ;
+}
+#testimonials {
+ 
+ color: rgb(255, 255, 255);
+ background-color:rgb(90, 52, 2) ;
+}
+#contact {
+ min-width: 2000px;
+ color: rgb(255, 255, 255);
+ background-color:rgb(4, 128, 39) ;
+}
+ .logo-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .logo {
+            display: inline-block;
+            background-color: #6aa84f;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 60%;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30%;
+            height: 30%;
+            background-color: #6aa84f;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .logo-tree {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            width: 10px;
+            height: 50px;
+            background-color: #6aa84f;
+            transform: translateX(-50%);
+        }
+
+        .logo-branch {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 10px;
+            background-color: #6aa84f;
+            transform: translate(-50%, -50%);
+        }
+
+        .logo-leaf {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .logo-leaf1 {
+            top: 30%;
+            left: 40%;
+        }
+
+        .logo-leaf2 {
+            top: 30%;
+            left: 60%;
+        }
+
+        .logo-leaf3 {
+            top: 10%;
+            left: 45%;
+        }
+
+        .logo-leaf4 {
+            top: 10%;
+            left: 55%;
+        }
+
+        .logo-text {
+            margin-top: 10px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .logo-subtext {
+            font-size: 16px;
+            color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+           <div class="logo-container">
+            <div class="logo">
+                <div class="logo-tree"></div>
+                <div class="logo-branch"></div>
+                <div class="logo-leaf logo-leaf1"></div>
+                <div class="logo-leaf logo-leaf2"></div>
+                <div class="logo-leaf logo-leaf3"></div>
+                <div class="logo-leaf logo-leaf4"></div>
+            </div>
+            <div class="logo-text">Jeannette Zosel</div>
+            <div class="logo-subtext">Ergotherapie Praxis</div>
+        </div>
+        </div>
+         <nav>
+           </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showSection('home')">Startseite</a></li>
+                <li><a href="#neurology" onclick="showSection('neurology')">Neurologie</a></li>
+                <li><a href="#pediatrics" onclick="showSection('pediatrics')">Pädiatrie</a></li>
+                <li><a href="#orthopedics" onclick="showSection('orthopedics')">Orthopädie</a></li>
+               <li><a href="#psychotheraphy" onclick="showSection('psychotheraphy')">Psychiatrie</a></li>
+                <li><a href="#bio-neurofeedback" onclick="showSection('bio-neurofeedback')">Bio-/Neurofeedback</a></li>
+                <li><a href="#about-us" onclick="showSection('about-us')">Über uns</a></li>
+                <li><a href="#testimonials" onclick="showSection('testimonials')">Erfahrungsberichte</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="active">
+        <h1>Willkommen bei Ihrer Praxis für Ergotherapie</h1>
+        <p>Ihr Weg zu mehr Lebensqualität und Selbstständigkeit.</p>
+    </section>
+
+    <section id="neurology">
+        <h2>Neurologie</h2>
+        <div class="service">
+            <h3>Neurologie</h3>
+            <p>
+                Um unseren Patienten stets eine optimale Behandlung zu bieten, bilden wir uns stetig weiter und erlernen neue Fähigkeiten. Durch unser vertieftes Fachwissen sind wir im Bereich der Neurologie der richtige Ansprechpartner. Die Neurologie beschäftigt sich unter anderem mit dem Aufbau, der Funktion sowie den chronischen Erkrankungen des Nervensystems. Mit unserer patientenorientierten Behandlung kann die Unabhängigkeit und Selbstständigkeit im Alltag wiedererlangt werden.<br><br>
+                Wir behandeln Kinder und Erwachsene mit:<br><br>
+                <ul>
+                    <li>Schlaganfall</li>
+                    <li>Multiple Sklerose</li>
+                    <li>Morbus Parkinson</li>
+                    <li>Polyneuropathien</li>
+                    <li>Schädelhirntrauma</li>
+                </ul>
+                Dabei wenden wir folgende Therapien an:
+                <ul>
+                    <li>Bobath-Therapie</li>
+                    <li>Bio- und Neurofeedback</li>
+                    <li>Hirnleistungstraining</li>
+                    <li>Selbsthilfetraining</li>
+                </ul>
+                Außerdem enthält unser breites Leistungsspektrum:
+                <ul>
+                    <li>ärztlich verordnete Hausbesuche</li>
+                    <li>Hilfsmittelberatung- und Versorgung</li>
+                    <li>Wohnraumanpassung</li>
+                    <li>Angehörigenberatung- und Anleitung</li>
+                    <li>Vorbereitung auf die berufliche Wiedereingliederung</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+
+    <section id="pediatrics">
+        <h2>Pädiatrie</h2>
+        <div class="service">
+            <h3>Pädiatrie</h3>
+            <p>
+                Unsere Ergotherapie in der Pädiatrie richtet sich gezielt an Kinder – vom Säuglingsalter bis hin zu Jugendlichen. Diese sind in ihrer Entwicklung gestört, in ihrer Selbstständigkeit stark eingeschränkt sowie von einer Behinderung betroffen oder bedroht. Die Ursachen könnten früh erworbene Störungen des Bewegungsablaufs infolge von verschiedenen Störungen, wie Hirnschädigungen, Sinnesbehinderungen oder Entwicklungsstörungen sein. Unsere Behandlungen beinhalten Aktivitäten, die für das Kind in einem sinnvollen Handlungszusammenhang stehen. In erster Linie werden die geistigen, emotionalen und körperlichen Fähigkeiten und Defizite erfasst. Es folgt eine Beratung mit den Eltern und eine intensive Zusammenarbeit, um das gewünschte Ziel zu erreichen. Das übergeordnete Ziel ist dabei die Handlungsfähigkeit und Selbstständigkeit des Kindes wiederzuerlangen.<br> Dazu gehören unter anderem:
+                <ul>
+                    <li>Verbesserung der Bewegungsabläufe, der Tonusregulation und der Koordination</li>
+                    <li>Umsetzung und Integration von Sinneswahrnehmungen</li>
+                    <li>Sensorische Integration und die Verbesserung von kognitiven Fähigkeiten, wie Konzentration und Ausdauer</li>
+                    <li>Entwicklung und Verbesserung von sozio- emotionalen Kompetenzen</li>
+                    <li>Integration des Kindes in Familie und Umwelt</li>
+                    <li>Kompensation bleibender Defizite, auch durch Hilfsmittel</li>
+                    <li>Behandelt wird nach den Behandlungskonzepten von Ayres, Affolter, Bobath, Castillo Moralis, Frostig, Laewen</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+
+    <section id="orthopedics">
+        <h2>Orthopädie</h2>
+        <div class="service">
+            <h3>Orthopädie</h3>
+            <p>
+                Ein besonderer Behandlungsschwerpunkt liegt auf der Therapie von orthopädischen und traumatologischen Krankheitsbildern. Ziel ist die Wiederherstellung der Beweglichkeit und Selbstständigkeit. So werden Funktionsstörungen von Muskeln, Gelenken oder Nerven behandelt. Das kann nach Verletzungen, Operationen, bei Erkrankungen oder Fehlbildungen notwendig sein. Die Behandlung erfolgt individuell, da wir einen stetigen Zulauf an neuen Patienten haben, die über persönliche Beschwerden klagen und unsere Hilfe in Anspruch nehmen.<br> Wir behandeln u. a.:
+                <ul>
+                    <li>angeborene und erworbene Deformitäten</li>
+                    <li>Rheumatische Erkrankungen</li>
+                    <li>Arthrose und Arthritis</li>
+                    <li>Frakturen</li>
+                    <li>Sehnenverletzungen</li>
+                    <li>Verbrennungen</li>
+                </ul>
+                Folgende Methoden und Techniken setzen wir in unserer Arbeit ein:
+                <ul>
+                    <li>Manuelle Therapie</li>
+                    <li>Thermische Anwendungen</li>
+                    <li>Muskelaufbau</li>
+                    <li>Gelenkmobilisation</li>
+                    <li>Schienenversorgung</li>
+                    <li>Motorisch-funktionelle Therapie</li>
+                </ul>
+            </p>
+        </div>
+    </section>
+<section id="psychotheraphy">
+        <h2>Psychiatrie</h2>
+        
+            <h3>psychiatrie</h3>
+          <p>In der Psychiatrie spielen Ergotherapie und deren Behandlungsansätze eine entscheidende Rolle, um die Lebensqualität der Patienten zu verbessern und deren Selbstständigkeit zu fördern. Unsere ergotherapeutischen Behandlungen zielen darauf ab, psychische, soziale und kognitive Fähigkeiten zu stärken.
+
+            <ul>
+                <li><strong>Förderung der Alltagsbewältigung:</strong> Durch gezielte Übungen und Aktivitäten helfen wir Patienten, ihre täglichen Aufgaben wieder eigenständig zu bewältigen.</li>
+                <li><strong>Verbesserung sozialer Fähigkeiten:</strong> Soziale Interaktionen und Kommunikationsfähigkeiten werden durch Gruppentherapien und gemeinsame Aktivitäten gestärkt.</li>
+                <li><strong>Steigerung der kognitiven Fähigkeiten:</strong> Gedächtnis, Konzentration und Problemlösungsfähigkeiten werden durch spezielle Trainingsprogramme gefördert.</li>
+                <li><strong>Emotionale Stabilität:</strong> Kreative und handwerkliche Tätigkeiten unterstützen den Ausdruck und die Verarbeitung von Gefühlen.</li>
+                <li><strong>Individuelle Therapiepläne:</strong> Jeder Patient erhält eine maßgeschneiderte Therapie, die auf seine spezifischen Bedürfnisse und Ziele abgestimmt ist.</li>
+            </ul>
+            Unsere Ergotherapie in der Psychiatrie bietet den Patienten eine wertvolle Unterstützung auf ihrem Weg zu mehr Unabhängigkeit und einem erfüllteren Leben. Wir begleiten sie mit Fachwissen, Empathie und Engagement.
+        
+            </p>
+  
+</section>
+   
+          <section id="bio-neurofeedback">
+        <h2>Bio- und Neurofeedback</h2>
+        <div class="service">
+            <h3>Bio- und Neurofeedback</h3>
+            <p>
+                Unser Biofeedback-Training basiert auf einem umfassenden und patientenspezifischen Ansatz, der sich gezielt auf die Bedürfnisse jedes Einzelnen konzentriert. Biofeedback ist eine Therapiemethode, bei der physiologische Prozesse, die normalerweise unbewusst ablaufen, sichtbar gemacht werden. So können zum Beispiel Muskelanspannungen, Hautleitwert, Atmung oder Herzfrequenz gemessen und auf einem Bildschirm dargestellt werden. Das Neurofeedback, als spezielle Form des Biofeedbacks, befasst sich mit der Messung und Rückmeldung der Hirnaktivitäten. Es hilft dabei, Fehlregulationen im Gehirn zu erkennen und gezielt zu therapieren.<br> Mit Bio- und Neurofeedback lassen sich unter anderem folgende Beschwerden behandeln:
+                <ul>
+                    <li>ADS/ADHS</li>
+                    <li>Angststörungen</li>
+                    <li>Migräne und chronische Schmerzen</li>
+                    <li>Schlafstörungen</li>
+                    <li>Epilepsie</li>
+                    <li>Depressionen</li>
+                </ul>
+                Ziel ist es, durch regelmäßiges Training eine nachhaltige Verbesserung der Beschwerden zu erzielen und die Selbstregulation des Körpers zu stärken.
+            </p>
+        </div>
+    </section>
+
+    <section id="about-us">
+        <h2>Über uns</h2>
+        <p>Unser Team aus erfahrenen und einfühlsamen Fachkräften setzt sich täglich dafür ein, die Lebensqualität unsere Patienten zu verbessern und ihre Selbstständikeit zu fördern.<br> Wir bieten eine breite Palette an Dienstleistungen an, darunter Neurofeedback, Hausbesuche und Gedächtnistraining, die individuell auf die Bedürfnisse jedes einzelnen abgestimmt sind. <br>Unsere Philosophie basiert auf Vertrauen, Respekt und Professionalität. Wir arbeiten eng mit Angehörigen und medizinischen Fachkräften zusammen, um eine umfassende und ganzeinheitliche Betreuung zu gewährleisten. <br>Bei Ergotherapie Praxis Zosel steht der Mensch im Mittelpunkt - wir sind erst zufrieden, wenn Sie es sind. </p>
+    </section>
+
+    <section id="testimonials">
+        <h2>Erfahrungsberichte</h2>
+        <blockquote>
+            <p>Hallo bin erst zeit Kurzem bei Frau Zosel in Behandlung und bin jetzt schon super zufrieden mit dem Ergebnis sie nimmt sich Zeit für die Behandlung kann die Praxis nur weiter empfehlen</p>
+            <footer>— Stefan Ziegler</footer>
+        </blockquote>
+        <blockquote>
+            <p>Bin sehr zufrieden mit Fr. Zosel und ihren Mitarbeitern. Fr. Zosel ist sehr einfühlsam hört mir immer zu wenn ich über Probleme rede. Das gesamte Team ist sehr freundlich und hilfsbereit. Fr. Zosel scheut sich nicht, die von ihr geforderten Übungen vor - und mitzumachen. Dies motiviert mich vor Allem an Tagen, an denen es mir durch meine Krankheit nicht so gut geht. Bei Verhinderung ihrer seits ist Fr. Zosel bemüht einen passenden Ersatz aus ihrem Team zu finden. Bin sehr froh das Fr. Zosel mich bei der Verbesserung meines Krankheitverlaufes unterstützt</p>
+            <footer>— Gudrun Kobel</footer>
+        </blockquote>
+        <blockquote>
+            <p>Angerufen, bekam zeitnahe einen Termin für meine Tochter, Verbesserung machte sich rasch bemerkbar!
+                Super einfühlsam...!!
+                Schöne helle Praxis mit Charme!
+                Mein Kind ist in guten Händen, sehr zu empfehlen!</p>
+            <footer>— Sven Küster</footer>
+        </blockquote>
+        <blockquote>
+            <p>Sehr gute Behandlung, sehr kompetent, dem Heilungsprozess angepasst, höflich, menschlich, angenehmer Umgang, gute Gespräche, einfach angenehmer Mensch. Die Thermine waren immer selber Wochentag- selbe Zeit-- einfacher- logischer- einprägsamer geht´s nicht. Es wäre super, wenn alle Menschen so umgänglich wären- vor allem in den medizienischen Bereichen.</p>
+            <footer>— Anonym</footer>
+        </blockquote>
+    </section>
+
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Kontaktieren Sie uns für weitere Informationen oder um einen Termin zu vereinbaren.
+            <br>Maximilian Straße 28 67433 Neustadt
+            <br>Tel.: 06321-899930
+            <br>Handynum.: 0162-2952398
+            <br>Email: j.zosel91@gmail.com
+        </p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5197.602522546429!2d8.145719999999999!3d49.355909999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796488ef77e3f71%3A0xac7cc82a1493710f!2sPraxis%20f%C3%BCr%20Ergotherapie%20Jeannette%20Zosel!5e0!3m2!1sde!2sde!4v1719931381566!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ihre Praxis für Ergotherapie. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                if (section.id === sectionId) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
